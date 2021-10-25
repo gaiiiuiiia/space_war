@@ -1,11 +1,15 @@
 import pygame as pg
-import os
-import sys
+from app.config import config as conf
+from app.classes.Player import Player
+from app.classes.ObjectManager import ObjectManager
 
 
 class SpaceWars:
     def __init__(self):
-        print('path is ', os.path.dirname(__file__))
+        pg.init()
+        pg.display.set_caption(conf.GAME_NAME)
+        self.window = pg.display.set_mode(conf.WIN_SIZE)
+        self.objectManager = ObjectManager(Player())
 
     def run(self):
         pass
@@ -16,5 +20,9 @@ def main():
     sw.run()
 
 
+def test():
+    pass
+
+
 if __name__ == '__main__':
-    main()
+    test()
